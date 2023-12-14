@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class GrupoUsuario extends Model
 {
     use HasFactory;
+
+    protected $table = 'grupo_usuario';
+    protected $fillable = [
+        'no_grupo_usuario'
+    ];
 }

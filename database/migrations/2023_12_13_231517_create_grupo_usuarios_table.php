@@ -13,9 +13,9 @@ class CreateGrupoUsuariosTable extends Migration
      */
     public function up()
     {
-        Schema::create('grupo_usuarios', function (Blueprint $table) {
+        Schema::create('grupo_usuario', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('no_grupo_usuario', 50)->unique();
         });
     }
 
@@ -26,6 +26,6 @@ class CreateGrupoUsuariosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('grupo_usuarios');
+        Schema::dropIfExists('grupo_usuario');
     }
 }

@@ -13,9 +13,15 @@ class CreateFormGruposTable extends Migration
      */
     public function up()
     {
-        Schema::create('form_grupos', function (Blueprint $table) {
+        Schema::create('form_grupo', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->unsignedBigInteger('formulario_id');
+            $table->foreign('formulario_id')->references('id')->on('formulario');
+            $table->unsignedBigInteger('grupo_usuario_id');
+            $table->foreign('grupo_usuario_id')->references('id')->on('grupo_usuario');
+            $table->boolean('form_grupo_incluir');
+            $table->boolean('form_grupo_atualizar');
+            $table->boolean('form_grupo_excluir');
         });
     }
 
@@ -26,6 +32,6 @@ class CreateFormGruposTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('form_grupos');
+        Schema::dropIfExists('form_grupo');
     }
 }

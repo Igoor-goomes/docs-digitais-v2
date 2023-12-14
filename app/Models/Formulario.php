@@ -8,4 +8,9 @@ use Illuminate\Database\Eloquent\Model;
 class Formulario extends Model
 {
     use HasFactory;
+
+    protected $table = 'formulario';
+    protected $fillable = [
+        'no_formulario'
+    ];
 }

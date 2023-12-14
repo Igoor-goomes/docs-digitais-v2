@@ -8,4 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Filial extends Model
 {
     use HasFactory;
+
+    protected $table = 'filial';
+    protected $fillable = [
+        'no_filial'
+    ];
+
 }

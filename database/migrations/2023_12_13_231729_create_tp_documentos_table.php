@@ -13,9 +13,9 @@ class CreateTpDocumentosTable extends Migration
      */
     public function up()
     {
-        Schema::create('tp_documentos', function (Blueprint $table) {
+        Schema::create('tp_documento', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('no_tp_documento', 50)->unique();
         });
     }
 
@@ -26,6 +26,6 @@ class CreateTpDocumentosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tp_documentos');
+        Schema::dropIfExists('tp_documento');
     }
 }

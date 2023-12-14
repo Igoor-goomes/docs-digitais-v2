@@ -13,9 +13,9 @@ class CreateOperacaosTable extends Migration
      */
     public function up()
     {
-        Schema::create('operacaos', function (Blueprint $table) {
+        Schema::create('operacao', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('no_operacao', 50)->unique();
         });
     }
 
@@ -26,6 +26,6 @@ class CreateOperacaosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('operacaos');
+        Schema::dropIfExists('operacao');
     }
 }

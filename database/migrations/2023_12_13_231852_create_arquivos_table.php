@@ -13,9 +13,12 @@ class CreateArquivosTable extends Migration
      */
     public function up()
     {
-        Schema::create('arquivos', function (Blueprint $table) {
+        Schema::create('arquivo', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->unsignedBigInteger('documento_id');
+            $table->foreign('documento_id')->references('id')->on('documento');
+            $table->string('arq_endereco', 100);
+            $table->string('arq_tipo', 3);
         });
     }
 
@@ -26,6 +29,6 @@ class CreateArquivosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('arquivos');
+        Schema::dropIfExists('arquivo');
     }
 }

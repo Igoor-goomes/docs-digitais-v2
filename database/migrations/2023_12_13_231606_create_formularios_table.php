@@ -13,9 +13,9 @@ class CreateFormulariosTable extends Migration
      */
     public function up()
     {
-        Schema::create('formularios', function (Blueprint $table) {
+        Schema::create('formulario', function (Blueprint $table) {
             $table->id();
-            $table->timestamps();
+            $table->string('no_formulario', 50)->unique();
         });
     }
 
@@ -26,6 +26,6 @@ class CreateFormulariosTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('formularios');
+        Schema::dropIfExists('formulario');
     }
 }
